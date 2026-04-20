@@ -72,6 +72,11 @@ namespace Codex
 
                 CellPool.DrawBlock(Position, CellSize, PieceColor, 2);
             }
+
+            if (IsGameOver)
+            {
+                ForceTintVisibleBlocks(GameOverBlockColor);
+            }
         }
 
         public void Dispose()
@@ -80,6 +85,23 @@ namespace Codex
             if (RuntimeRoot != null)
             {
                 Object.Destroy(RuntimeRoot.gameObject);
+            }
+        }
+
+        private void ForceTintVisibleBlocks(Color TintColor)
+        {
+            SpriteRenderer[] Renderers = RuntimeRoot.GetComponentsInChildren<SpriteRenderer>(true);
+            for (int Index = 0; Index < Renderers.Length; Index++)
+            {
+                SpriteRenderer Renderer = Renderers[Index];
+                if (Renderer == null || !Renderer.gameObject.activeInHierarchy)
+                {
+                    continue;
+                }
+
+                Color NewColor = TintColor;
+                NewColor.a = Renderer.color.a;
+                Renderer.color = NewColor;
             }
         }
     }
