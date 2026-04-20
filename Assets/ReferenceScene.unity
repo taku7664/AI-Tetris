@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 215626055}
   - component: {fileID: 215626054}
   m_Layer: 0
-  m_Name: PrivewBox
+  m_Name: PreviewBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
