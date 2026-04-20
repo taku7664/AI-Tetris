@@ -100,7 +100,7 @@ namespace Codex
             Color PieceColor = Codex_TetrominoData.GetColor(Piece.Type);
             if (IsGhost)
             {
-                PieceColor.a = 0.5f;
+                PieceColor.a = 0.2f;
             }
 
             for (int Index = 0; Index < Cells.Length; Index++)
