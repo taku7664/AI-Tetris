@@ -195,7 +195,11 @@ namespace Codex
 
             if (BoardState.CanPlace(CurrentPiece))
             {
-                return;
+                Codex_PieceState FirstStepPiece = CurrentPiece.WithPivot(CurrentPiece.Pivot + Vector2Int.down);
+                if (BoardState.CanPlace(FirstStepPiece))
+                {
+                    return;
+                }
             }
 
             IsGameOver = true;
