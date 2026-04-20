@@ -5,6 +5,7 @@ namespace Codex
     public sealed class Codex_PreviewRenderer
     {
         private const int PreviewGridSize = 4;
+        private static readonly Color GameOverBlockColor = new Color(0.5f, 0.5f, 0.5f, 1f);
 
         private readonly Codex_BlockPool CellPool;
         private readonly Transform RuntimeRoot;
@@ -35,12 +36,12 @@ namespace Codex
             CellPool = new Codex_BlockPool(RuntimeRoot, SquareSprite, "Codex_PreviewCell");
         }
 
-        public void Render(Codex_TetrominoType PieceType)
+        public void Render(Codex_TetrominoType PieceType, bool IsGameOver)
         {
             CellPool.BeginFrame();
 
             Vector2Int[] Cells = Codex_TetrominoData.GetCells(PieceType, 0);
-            Color PieceColor = Codex_TetrominoData.GetColor(PieceType);
+            Color PieceColor = IsGameOver ? GameOverBlockColor : Codex_TetrominoData.GetColor(PieceType);
 
             int MinX = int.MaxValue;
             int MaxX = int.MinValue;

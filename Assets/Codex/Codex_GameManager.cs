@@ -266,7 +266,7 @@ namespace Codex
 
             Codex_PieceState GhostPiece = TetrisGame.GetGhostPiece();
             FieldRenderer.Render(TetrisGame.BoardState, TetrisGame.CurrentPiece, GhostPiece, TetrisGame.IsGameOver);
-            PreviewRenderer.Render(TetrisGame.NextPieceType);
+            PreviewRenderer.Render(TetrisGame.NextPieceType, TetrisGame.IsGameOver);
             ScoreText.text = $"Score: {TetrisGame.Score}";
         }
     }

@@ -4,6 +4,8 @@ namespace Codex
 {
     public sealed class Codex_FieldRenderer
     {
+        private static readonly Color GameOverBlockColor = new Color(0.5f, 0.5f, 0.5f, 1f);
+
         private readonly int FieldWidth;
         private readonly int FieldHeight;
         private readonly Codex_BlockPool CellPool;
@@ -54,14 +56,14 @@ namespace Codex
         public void Render(Codex_BoardState BoardState, Codex_PieceState ActivePiece, Codex_PieceState GhostPiece, bool IsGameOver)
         {
             CellPool.BeginFrame();
-            DrawPlacedBlocks(BoardState);
+            DrawPlacedBlocks(BoardState, IsGameOver);
 
             if (!IsGameOver)
             {
-                DrawPiece(GhostPiece, true, 3);
+                DrawPiece(GhostPiece, true, false, 3);
             }
 
-            DrawPiece(ActivePiece, false, 4);
+            DrawPiece(ActivePiece, false, IsGameOver, 4);
         }
 
         public void Dispose()
@@ -78,7 +80,7 @@ namespace Codex
             }
         }
 
-        private void DrawPlacedBlocks(Codex_BoardState BoardState)
+        private void DrawPlacedBlocks(Codex_BoardState BoardState, bool IsGameOver)
         {
             for (int Y = 0; Y < FieldHeight; Y++)
             {
@@ -89,16 +91,17 @@ namespace Codex
                         continue;
                     }
 
-                    DrawCell(X, Y, Codex_TetrominoData.GetColor(Type), 2);
+                    Color CellColor = IsGameOver ? GameOverBlockColor : Codex_TetrominoData.GetColor(Type);
+                    DrawCell(X, Y, CellColor, 2);
                 }
             }
         }
 
-        private void DrawPiece(Codex_PieceState Piece, bool IsGhost, int SortingOrder)
+        private void DrawPiece(Codex_PieceState Piece, bool IsGhost, bool IsGameOver, int SortingOrder)
         {
             Vector2Int[] Cells = Codex_TetrominoData.GetCells(Piece.Type, Piece.Rotation);
-            Color PieceColor = Codex_TetrominoData.GetColor(Piece.Type);
-            if (IsGhost)
+            Color PieceColor = IsGameOver ? GameOverBlockColor : Codex_TetrominoData.GetColor(Piece.Type);
+            if (IsGhost && !IsGameOver)
             {
                 PieceColor.a = 0.2f;
             }
