@@ -648,7 +648,7 @@ namespace ChatGPT
                     }
 
                     ChatGPT_PieceType type = (ChatGPT_PieceType)(cellValue - 1);
-                    Color color = ChatGPT_Tetromino.GetColor(type);
+                    Color color = IsGameOver ? Color.gray : ChatGPT_Tetromino.GetColor(type);
                     FieldPool.Draw(GetBoardCellCenter(new Vector2Int(x, y)), CellSize, color);
                 }
             }
