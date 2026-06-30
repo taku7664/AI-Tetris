@@ -130,7 +130,8 @@
 
 # Codex - 완료
 <img width="405" height="543" alt="image" src="https://github.com/user-attachments/assets/8a4ebf36-677d-488d-a745-b50e4cb36cf2" />
-<img width="405" height="543" alt="image" src="https://github.com/user-attachments/assets/673c3bd7-2962-476e-a924-76be118ddf32" />
+<img width="405" height="543" alt="image" src="https://github.com/user-attachments/assets/48cb3b2b-f813-47bf-a6fd-3f9f96e04adf" />
+
 
 # Copilot - 미완료
 <img width="306" height="396" alt="image" src="https://github.com/user-attachments/assets/e4608638-2b98-4999-84d7-726cc100e73b" />
