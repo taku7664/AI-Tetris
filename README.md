@@ -124,11 +124,11 @@
 
 </details>
 
-# Chat GPT - 완료
+# Chat GPT(Codex 아님) - 완료
 <img width="400" height="550" alt="image" src="https://github.com/user-attachments/assets/c5f042b9-a899-4282-80e3-f798223d842b" />
 <img width="400" height="550" alt="image" src="https://github.com/user-attachments/assets/051a8c65-930a-4b71-ba2b-66ff74aab380" />
 
-# VS Code - 완료
+# Codex - 완료
 <img width="405" height="543" alt="image" src="https://github.com/user-attachments/assets/8a4ebf36-677d-488d-a745-b50e4cb36cf2" />
 <img width="405" height="543" alt="image" src="https://github.com/user-attachments/assets/673c3bd7-2962-476e-a924-76be118ddf32" />
 
